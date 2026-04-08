@@ -31,7 +31,7 @@ export default function LoginPage() {
   }
 
   const inputClass = (name: string) =>
-    `w-full bg-transparent text-white text-sm font-light py-3 outline-none transition-all duration-300 border-b ${
+    `w-full bg-neutral-950 text-white text-sm font-bold py-3 outline-none transition-all duration-300 border-b ${
       focused === name ? 'border-[#D4AF37]' : 'border-white/15'
     } placeholder-white/20 tracking-widest`
 
@@ -58,7 +58,7 @@ export default function LoginPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="mx-auto mb-4 w-px h-10"/>
-          <p className="text-[#D4AF37] text-[10px] tracking-[0.45em] uppercase font-light">Connexion</p>
+          <p className="text-[#D4AF37] text-[10px] tracking-[0.45em] uppercase font-bold">Connexion</p>
         </div>
 
         {/* Card */}
@@ -79,7 +79,7 @@ export default function LoginPage() {
 
             {/* Email */}
             <div className="space-y-2">
-              <label className="block text-[10px] tracking-[0.3em] uppercase font-light transition-colors duration-300"
+              <label className="block text-[10px] tracking-[0.3em] uppercase font-bold transition-colors duration-300"
                 style={{ color: focused === 'email' ? '#D4AF37' : 'rgba(255,255,255,0.3)' }}>
                 Email
               </label>
@@ -98,7 +98,7 @@ export default function LoginPage() {
 
             {/* Password */}
             <div className="space-y-2">
-              <label className="block text-[10px] tracking-[0.3em] uppercase font-light transition-colors duration-300"
+              <label className="block text-[10px] tracking-[0.3em] uppercase font-bold transition-colors duration-300"
                 style={{ color: focused === 'password' ? '#D4AF37' : 'rgba(255,255,255,0.3)' }}>
                 Mot de passe
               </label>
@@ -128,7 +128,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="relative hover:cursor-pointer w-full py-3.5 text-[11px] tracking-[0.35em] uppercase font-light overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
+                className="relative hover:cursor-pointer w-full py-3.5 text-[11px] tracking-[0.35em] uppercase font-bold overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
                 style={{
                   background: loading ? 'transparent' : 'linear-gradient(135deg, #C9A227 0%, #F0D060 50%, #C9A227 100%)',
                   color: loading ? '#D4AF37' : '#0a0a0a',

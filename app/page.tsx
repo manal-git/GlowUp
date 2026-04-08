@@ -263,22 +263,41 @@ export default function HomePage() {
                 L'application beauté qui connecte les clients aux meilleurs salons. Élégance, simplicité, excellence.
               </p>
             </div>
+
             {[
-              { title: "Prestations", links: ["Coiffure", "Manucure", "Soins visage", "Massage"] },
-              { title: "Application", links: ["S'inscrire", "Se connecter", "Tableau de bord", "Mes RDV"] },
-              { title: "Contact", links: ["À propos", "Aide & Support", "Mentions légales", "Confidentialité"] },
+              {
+                title: "Application",
+                links: [
+                  { label: "S'inscrire", href: "/register" },
+                  { label: "Se connecter", href: "/login" },
+                ],
+              },
+              {
+                title: "Contact",
+                links: [
+                  { label: "Aide & Support", href: "/support" },
+                ],
+              },
             ].map((col, i) => (
               <div key={i}>
-                <h4 className="text-[0.58rem] font-semibold tracking-[.3em] uppercase text-[#C9A84C] mb-5">{col.title}</h4>
+                <h4 className="text-[0.58rem] font-semibold tracking-[.3em] uppercase text-[#C9A84C] mb-5">
+                  {col.title}
+                </h4>
                 <ul className="space-y-3">
                   {col.links.map((l, j) => (
                     <li key={j}>
-                      <a href="#" className="text-[0.7rem] font-light text-white/30 hover:text-[#E8C97A] transition-colors tracking-wide">{l}</a>
+                      <Link
+                        href={l.href}
+                        className="text-[0.7rem] font-light text-white/30 hover:text-[#E8C97A] transition-colors tracking-wide"
+                      >
+                        {l.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
+
           </div>
           <div className="max-w-6xl mx-auto pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-3">
             <p className="text-[0.6rem] tracking-widest text-white/20">

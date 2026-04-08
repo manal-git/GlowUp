@@ -73,9 +73,9 @@ export default function RegisterPage() {
       <div className="relative w-full max-w-sm">
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center m-10">
           <div className="mx-auto mb-4 w-px h-10" />
-          <p className="text-[#D4AF37] text-[10px] tracking-[0.45em] uppercase font-light">Créer un compte</p>
+          <p className="text-[#D4AF37] text-[10px] tracking-[0.45em] uppercase font-bold">Créer un compte</p>
         </div>
 
         {/* Card */}
@@ -97,7 +97,7 @@ export default function RegisterPage() {
             {fields.map(({ name, type, label, autoComplete }) => (
               <div key={name} className="space-y-2">
                 <label
-                  className="block text-[10px] tracking-[0.3em] uppercase font-light transition-colors duration-300"
+                  className="block text-[10px] tracking-[0.3em] text-white uppercase font-bold  transition-colors duration-300"
                   style={{ color: focused === name ? '#D4AF37' : 'rgba(255,255,255,0.3)' }}
                 >
                   {label}
@@ -108,7 +108,7 @@ export default function RegisterPage() {
                   required
                   autoComplete={autoComplete}
                   placeholder=""
-                  className="w-full bg-transparent text-white text-sm font-light py-3 outline-none transition-all duration-300 border-b placeholder-white/20 tracking-widest"
+                  className="w-full bg-neutral-950 text-white text-sm font-bold py-3 outline-none transition-all duration-300 border-b placeholder-white/20 tracking-widest"
                   style={{
                     borderBottomColor: focused === name ? '#D4AF37' : 'rgba(255,255,255,0.15)',
                     caretColor: '#D4AF37',
@@ -134,7 +134,7 @@ export default function RegisterPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="relative hover:cursor-pointer w-full py-3.5 text-[11px] tracking-[0.35em] uppercase font-light overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
+                className="relative hover:cursor-pointer w-full py-3.5 text-[11px] tracking-[0.35em] uppercase font-bold overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
                 style={{
                   background: loading ? 'transparent' : 'linear-gradient(135deg, #C9A227 0%, #F0D060 50%, #C9A227 100%)',
                   color: loading ? '#D4AF37' : '#0a0a0a',

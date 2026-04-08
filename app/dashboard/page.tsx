@@ -22,8 +22,7 @@ export default async function DashboardPage() {
   const now = new Date()
   const upcoming = user.reservations.filter(r => new Date(r.date) >= now)
   const past = user.reservations.filter(r => new Date(r.date) < now)
-
-  const totalSpent = past.reduce((sum, r) => sum + r.prestation.price, 0)
+  const totalSpent = past.reduce((sum, r) => sum + Number(r.prestation.price), 0)
 
   const formatDate = (date: Date) =>
     new Date(date).toLocaleDateString('fr-FR', {
@@ -102,7 +101,7 @@ export default async function DashboardPage() {
             {upcoming.length === 0 ? (
               <div className="border border-[#C9A84C]/10 bg-[#111111] p-10 text-center">
                 <p className="font-display italic text-xl text-white/30 mb-4">Aucun rendez-vous à venir</p>
-                <Link href="/appointement"
+                <Link href="/appointment"
                   className="inline-block text-[0.62rem] tracking-[.2em] uppercase px-8 py-3 border border-[#C9A84C]/40 text-[#E8C97A] hover:bg-[#C9A84C] hover:text-black transition-all duration-300">
                   Prendre un rendez-vous
                 </Link>
@@ -136,11 +135,11 @@ export default async function DashboardPage() {
           {/* ── Quick book services ── */}
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-1">
-              <span className="text-[0.6rem] tracking-[.35em] uppercase text-[#C9A84C]">Nos services</span>
+              <span id="prestations" className="text-[0.6rem] tracking-[.35em] uppercase text-[#C9A84C]">Nos prestations</span>
               <span className="w-8 h-px bg-[#C9A84C]/40" />
             </div>
             <h2 className="font-display font-light text-2xl text-white mb-6">
-              Réserver un <em className="text-[#E8C97A]">soin</em>
+              Réserver une <em className="text-[#E8C97A]">prestation</em>
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {services.map((s, i) => (
